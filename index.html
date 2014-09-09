@@ -7,7 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MediaMorph - Maxime Bodereau</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link href="css/introjs.css" rel="stylesheet">
+
+    <!-- Load c3.css -->
+    <link href="css/c3.css" rel="stylesheet" type="text/css">
+
+    <!-- Load d3.js and c3.js -->
+    <script src="js/d3.min.js" charset="utf-8"></script>
+    <script src="js/c3.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css"/>
+
+
 </head>
 <body>
 <div class="">
@@ -24,7 +35,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="pull-right">
                     <ul class="nav pull-right">
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <li class="dropdown" data-step="1" data-intro="This is a tooltip!"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Robert Gardos <b class="caret"></b>
                             <br/>
                             <small class="text-muted">Producer</small>
@@ -369,8 +380,9 @@
                         </div>
                         <div class="tab-pane fade" id="dataviz">
 
-                            demo
-
+                            <div class="col-lg-12">
+                                <div id="chart"></div>
+                            </div>
 
                         </div>
                     </div>
@@ -387,6 +399,47 @@
 
 <script src="js/jquery-2.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<script>
+    var chart = c3.generate({
+        data: {
+            x : 'x',
+            columns: [
+                ['x', 'The Fellowship Of The Ring', 'Over Her Dead Body', 'Shoot Em Up', 'The Texas Chainsaw Massacre'],
+                ['Expense', 93, 200, 100, 400],
+                ['Income', 871, 100, 140, 200],
+            ],
+            groups: [
+                ['Income', 'Expense']
+            ],
+            type: 'bar',
+            colors: {
+                x: '#ffffff',
+                Expense: '#E5FCC2',
+                Income: '#9DE0AD'
+            }
+        },
+        tooltip: {
+            show: false
+        },
+        axis: {
+            x: {
+                type: 'category' // this needed to load string x value
+            }
+        }
+    });
+
+
+
+</script>
+<script type="text/javascript" src="js/intro.js"></script>
+<script>
+    $( document ).ready(function() {
+
+        introJs().start();
+
+    });
+</script>
 
 </body>
 </html>

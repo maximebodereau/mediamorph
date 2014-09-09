@@ -53,10 +53,6 @@ input, .form-control, .input-group-addon, .btn, .btn-xs, .btn-group-xs>.btn {
     border-radius: 0px;
 }
 
-.tab-pane {
-    overflow-y: auto;
-}
-
 .with-nav-tabs .nav-pills>li.active>a, .with-nav-tabs .nav>li>a:hover {
     background: #323232 !important;
     border-radius: 0px;
@@ -65,17 +61,33 @@ input, .form-control, .input-group-addon, .btn, .btn-xs, .btn-group-xs>.btn {
 .with-nav-tabs .nav>li>a {
     background: #000;
     border-radius: 0px;
+    color: #f8f8f8;
 }
 
-.tab-content svg {
+.tab-content #block svg {
     padding: 5px;
     padding-left: 7px;
 }
 
-.tab-content svg:hover {
+.tab-content #block svg:hover {
     background: #000;
 }
 
+
 .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th{
     background: #000;
+}
+
+.c3 text, .c3 path, .c3 line{
+    fill: #fff;
+    color: #f8f8f8;
+    font-size: 13px;
+}
+
+.introjs-tooltip {
+    background-color: rgba(0, 0, 0, 0.84)!important;
+}
+
+.introjs-arrow {
+    border: 5px solid #000!important;
 }
